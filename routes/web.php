@@ -1,18 +1,39 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return "Hallo Word";
+});
+
+Route::get('kedua', function () {
+    return "Hallo Laravel";
+});
+
+Route::get('ketiga', function () {
+    return "Hallo Rusla Ramdani";
+});
+
+Route::get('keempat', function () {
+    return "Hallo Aziz Tubagus";
+});
+
+// Parameter Wajib
+Route::get('kelima/{nama}/kelas/{kelas}', function ($nama, $kelas) {
+    return "Nama saya adalah : ".$nama . "<br> Kelas : " . $kelas;
+});
+
+// Parameter Opsional
+Route::get('keenam/{nama?}', function ($nama = "Wajib Diisi !!") {
+    return "Nama saya adalah : " . $nama;
+});
+
+// Parameter Soal
+Route::get('hitung-luas-segitiga/{alas?}/{tiggi?}', function ($alas = 1,$tinggi = 1) {
+
+    echo "Alasnya Adalah : " . $alas;
+    echo "<br> tingginya Adalah : " . $tinggi;
+
+    $luas = $alas * $tinggi / 2;
+
+    return "<br> Hasil Luas Segitiga : " . $luas;
 });
