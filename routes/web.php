@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,4 +38,19 @@ Route::get('hitung-luas-segitiga/{alas?}/{tiggi?}', function ($alas = 1,$tinggi 
     $luas = $alas * $tinggi / 2;
 
     return "<br> Hasil Luas Segitiga : " . $luas;
+});
+
+
+// Parameter GRUP
+
+Route::group(['prefix'=>'jurusan'], function() {
+    Route::get('/', function () {
+        return "Berhasil";
+    });
+    Route::get('kelas/{namakelas}', function ($namakelas) {
+        return $namakelas;
+    });
+    Route::get('wali-kelas/{nama}', function ($nama) {
+        return $nama;
+    });
 });
