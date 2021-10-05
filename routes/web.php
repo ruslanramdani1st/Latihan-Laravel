@@ -63,3 +63,8 @@ Route::get('nama/{nama}', [DataSiswaController::class, 'nama']);
 Route::get('namanya/{nama?}', [DataSiswaController::class, 'namanya']);
 Route::resource('use', UserController::class);
 Route::resource('user', UserController::class);
+
+// Menampilkan data di folder resouse/view index.blade.php
+Route::get('profile/{nama}', function () {
+    return view('index' , ['nama' => 'Ruslan Ramdani']);
+});
