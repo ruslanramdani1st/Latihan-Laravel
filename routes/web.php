@@ -68,3 +68,7 @@ Route::resource('user', UserController::class);
 Route::get('profile/{nama}', function () {
     return view('index' , ['nama' => 'Ruslan Ramdani']);
 });
+
+Route::get('album', function () {
+    return view('album');
+});
