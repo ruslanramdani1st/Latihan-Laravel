@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Heroic Features - Start Bootstrap Template</title>
+        <title>@yield('judul')</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{asset('assets/favicon.ico')}}" />
         <!-- Bootstrap icons-->
@@ -18,9 +18,11 @@
         @include('include.nav')
         <!-- Header-->
         @include('include.header')
+
         <!-- Page Content-->
         <section class="pt-4">
-            <div class="container px-lg-5">
+            @yield('section')
+            {{-- <div class="container px-lg-5">
                 <!-- Page Features-->
                 <div class="row gx-lg-5">
                     @for ($i=1; $i <=19; $i++)
@@ -81,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">

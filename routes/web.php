@@ -69,6 +69,10 @@ Route::get('profile/{nama}', function () {
     return view('index' , ['nama' => 'Ruslan Ramdani']);
 });
 
+Route::get('index', function () {
+    return view('profile.indexx');
+})->name('index');
+
 Route::get('album', function () {
-    return view('album');
-});
+    return view('profile.album');
+})->name('album');
